@@ -1,9 +1,9 @@
 package com.example.todo.model
 
-data class Categoria (
+data class Categoria(
     var id: Long,
-    var descricao: String,
-    var tarefas: List<Tarefa>
+    var descricao: String?,
+    var tarefas: List<Tarefa>?
         ){
     override fun toString():String {
         return descricao!!
