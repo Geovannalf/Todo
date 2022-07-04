@@ -3,10 +3,7 @@ package com.example.todo.api
 import com.example.todo.model.Categoria
 import com.example.todo.model.Tarefa
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.PUT
+import retrofit2.http.*
 import java.util.*
 
 interface apiService {
@@ -25,6 +22,13 @@ interface apiService {
     suspend fun updateTarefa(
         @Body tarefa: Tarefa
     ): Response<Tarefa>
+
+    @DELETE("tarefa/id")
+
+    suspend fun deleteTarefa(
+        @Path("id") id: Long
+    ): Response<Tarefa>
+
 
 
 
